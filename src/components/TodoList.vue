@@ -17,17 +17,18 @@ export default {
     },
     computed: {
         todos() {
-            return this.$store.state.todos;
+            // return this.$store.state.todos;
+            return this.$store.state.todo.todos;
         },
     },
-    methods: {
-        toggleCheckbox(value) {
-            this.$emit('toggle-checkbox', value)
-        },
-        deleteTodo(todoId) {
-            this.$emit('click-delete', todoId);
-        }
-    }
+    // methods: {
+    //     toggleCheckbox(value) {
+    //         this.$emit('toggle-checkbox', value)
+    //     },
+    //     deleteTodo(todoId) {
+    //         this.$emit('click-delete', todoId);
+    //     }
+    // }
 }
 </script>
 <style lang="">

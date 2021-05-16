@@ -20,10 +20,12 @@ export default {
         this.getUsers();        
     },
     computed: { //이름만 넣어주면 Mapping해주는 기능 (vuex 제공)
-        ...mapState([
+        ...mapState({
             // 'todos'
-            'users'
-        ])
+            // 'users'
+            //Modules 사용
+            users: state => state.user.users
+        })
         // users() {
         //     return this.$store.state.users;
         // },
@@ -32,7 +34,7 @@ export default {
         // }
     },
     methods: {
-        ...mapActions(['getUsers'])
+        ...mapActions('user', ['getUsers'])
         // getUsers() {
         //     this.$store.dispatch('getUsers');
         //     // axios.get('https://jsonplaceholder.typicode.com/users').then(res => {
